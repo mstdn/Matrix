@@ -1,14 +1,15 @@
-import { 
-    Environment,
-    OrbitControls,
-    Sky 
-} from '@react-three/drei'
+import { Environment, OrbitControls, Sky } from '@react-three/drei'
+import { Suspense } from 'react'
+import  Lights from '../Lights.jsx'
+import World from './World.jsx'
 
 export default function Experience()
 {
     return <>
         <OrbitControls />
-        <Sky />
-        <Environment preset='sunset' />
+        <Lights />
+        <Suspense fallback={ null }>
+            <World />
+        </Suspense>
     </>
 }

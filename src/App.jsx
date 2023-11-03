@@ -1,9 +1,11 @@
 import { Canvas } from '@react-three/fiber'
+import { Loader } from '@react-three/drei'
 import Experience from './components/Experience.jsx'
 
 export default function App()
 {
-    return(
+    return( <>
+        <Loader />
         <Canvas
             shadows
             camera={ 
@@ -15,8 +17,8 @@ export default function App()
                 } 
             }
         >
-            <color attach="background" args={["#ececec"]} />
             <Experience />
         </Canvas>
+    </> 
     )
 }

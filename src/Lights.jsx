@@ -1,6 +1,10 @@
+import { Sky, Environment } from '@react-three/drei'
+
 export default function Lights()
 {
     return <>
+        <Sky />
+        <Environment preset='sunset' />
         <directionalLight
             castShadow
             position={ [ 4, 4, 1 ] }
