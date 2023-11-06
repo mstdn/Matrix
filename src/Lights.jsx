@@ -1,6 +1,14 @@
+import { Sky, Environment } from '@react-three/drei'
+
 export default function Lights()
 {
     return <>
+        <Sky 
+            sunPosition={ [ 4, 4, 1 ] }
+        />
+        <Environment
+            preset='sunset' 
+        />
         <directionalLight
             castShadow
             position={ [ 4, 4, 1 ] }
@@ -13,6 +21,8 @@ export default function Lights()
             shadow-camera-bottom={ - 10 }
             shadow-camera-left={ - 10 }
         />
-        <ambientLight intensity={ 0.5 } />
+        <ambientLight 
+            intensity={ 0.5 } 
+        />
     </>
 }

@@ -1,4 +1,5 @@
 import { Canvas } from '@react-three/fiber'
+import { Loader } from '@react-three/drei'
 import Experience from './components/Experience.jsx'
 import { Suspense, useState } from 'react'
 import { LoadingScreen } from './components/LoadingScreen.jsx'
