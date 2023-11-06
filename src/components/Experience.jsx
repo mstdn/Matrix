@@ -3,6 +3,7 @@ import {
     OrbitControls,
     Sky 
 } from '@react-three/drei'
+import World from './World'
 
 export default function Experience()
 {
@@ -10,5 +11,6 @@ export default function Experience()
         <OrbitControls />
         <Sky />
         <Environment preset='sunset' />
+        <World />
     </>
 }
