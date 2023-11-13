@@ -2,6 +2,7 @@ import { Canvas } from '@react-three/fiber'
 import Experience from './components/Experience.jsx'
 import { Suspense, useState } from 'react'
 import { LoadingScreen } from './components/LoadingScreen.jsx'
+import { PositionalAudio } from '@react-three/drei'
 
 export default function App()
 {
@@ -24,8 +25,10 @@ export default function App()
             }
         >
             <Suspense>
-                {started && (
+                {started && ( <>
+                    <PositionalAudio autoplay loop url="./assets/mp3/1.mp3" distance={ 300 } />
                     <Experience />
+                </>
                 )}
             </Suspense>
         </Canvas>
