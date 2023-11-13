@@ -3,10 +3,12 @@ import Experience from './components/Experience.jsx'
 import { Suspense, useState } from 'react'
 import { LoadingScreen } from './components/LoadingScreen.jsx'
 import { PositionalAudio } from '@react-three/drei'
+import { Interface } from './components/Interface.jsx'
 
 export default function App()
 {
     const [ started, setStarted ] = useState(false)
+    const [ audio, setAudio ] = useState(true)
 
     return( <>
         <LoadingScreen 
@@ -26,11 +28,19 @@ export default function App()
         >
             <Suspense>
                 {started && ( <>
-                    <PositionalAudio autoplay loop url="./assets/mp3/1.mp3" distance={ 300 } />
+                    { audio && (
+                        <PositionalAudio autoplay loop url="./assets/mp3/1.mp3" distance={ 300 } />
+                    )}
                     <Experience />
                 </>
                 )}
             </Suspense>
         </Canvas>
+        { started && (
+            <Interface 
+                audio={ audio }
+                setAudio={ setAudio }
+            />
+        )}
     </> )
 }

@@ -46,7 +46,8 @@ export const LoadingScreen = (props) =>
               padding: "15px"
             }}
           >
-            Start
+            <span>enter the</span>
+            <p className='text-8xl'>Matrix</p>
           </button>
         )}
       { progress !== 100 && (
