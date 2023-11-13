@@ -1,5 +1,4 @@
 import { Canvas } from '@react-three/fiber'
-import { Loader } from '@react-three/drei'
 import Experience from './components/Experience.jsx'
 import { Suspense, useState } from 'react'
 import { LoadingScreen } from './components/LoadingScreen.jsx'
@@ -18,9 +17,9 @@ export default function App()
             camera={ 
                 {
                     fov: 45,
-                    position: [ 0, 0, 5 ]
-                    // near: 0.1,
-                    // far: 200,
+                    position: [ 0, 0, 5 ],
+                    near: 0.1,
+                    far: 600,
                 } 
             }
         >

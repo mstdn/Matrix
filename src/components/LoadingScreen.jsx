@@ -1,43 +1,69 @@
 import { useProgress } from '@react-three/drei'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 export const LoadingScreen = (props) => 
 {
   const { started, setStarted } = props
   const { progress, total, loaded, item } = useProgress()
+  const [showStartButton, setShowStartButton] = useState(false)
+  const [ showLoading, setShowLoading ] = useState(true)
 
   useEffect(() => 
   {
     if (progress === 100) 
     {
-      setTimeout(() => {
-        setStarted(true)
-      }, 500)
+      setShowStartButton(true)
     }
-  }, [progress, total, loaded, item])
+  }, [progress])
 
-  return (
-    <div
-        className={`
-            fixed top-0 left-0 w-full h-full z-50 transition-opacity 
-            duration-1000 pointer-events-none
-            flex items-center justify-center bg-yellow-500 
-            ${started ? "opacity-0" : "opacity-100"}
-        `}
-    >
-      <div className="text-4xl md:text-9xl font-bold text-white relative">
-        <div
-          className="absolute left-0 top-0  overflow-hidden truncate text-clip transition-all duration-500"
-          style={{
-            width: `${progress}%`,
-          }}
-        >
-          Loading..
-        </div>
-        <div className="opacity-40">
-          Loading..
-        </div>
-      </div>
-    </div>
-  );
+  const handleStartClick = () => {
+    setStarted(true)
+  }
+
+  return (<>
+        
+      {showLoading && (
+      <div
+          className={`
+              fixed top-0 left-0 w-full h-full z-50 transition-opacity 
+              duration-1000
+              flex items-center justify-center bg-[#f2e900] 
+              ${started ? "opacity-0" : "opacity-100"}
+          `}
+      >
+      {showStartButton && progress === 100 && (
+          <button 
+            className="text-3xl md:text-5xl font-bold text-black transition-all duration-500"
+            onClick={() => {
+              handleStartClick()
+              setShowStartButton(false)
+              setShowLoading(false)
+            }}
+            style={{
+              border: "2px solid black",
+              borderRadius: "10px",
+              padding: "15px"
+            }}
+          >
+            Start
+          </button>
+        )}
+      { progress !== 100 && (
+
+        <div className="text-3xl md:text-5xl font-bold text-black relative">
+          <div
+            className="absolute left-0 top-0  overflow-hidden truncate text-clip transition-all duration-500"
+            style={{
+              width: `${progress}%`,
+            }}
+          >
+            Loading
+          </div>
+          <div className="opacity-40">
+            Loading
+          </div>
+        </div> )}
+
+      </div> )}
+  </>);
 };
