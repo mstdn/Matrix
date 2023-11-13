@@ -8,5 +8,11 @@
   }
   
   body {
+    font-family: Matrix;
     margin: 0;
   }
+
+  @font-face {
+    font-family: Matrix;
+    src: url('/assets/fonts/matrix.ttf');
+}
