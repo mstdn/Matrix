@@ -12,16 +12,16 @@ export default function World()
             <Float>
                 <Text
                     font="./assets/fonts/matrix.ttf"
-                    fontSize={ 0.5 }
+                    fontSize={ 0.7 }
                 >
                     Matrix
                 </Text>
                 <Text
                     position={ [0, - 0.3, 0] }
                     font="./assets/fonts/matrix.ttf"
-                    fontSize={ 0.3 }
+                    fontSize={ 0.25 }
                 >
-                    tududuuu
+                    free. your. mind.
                 </Text>
             </Float>
         </group>
