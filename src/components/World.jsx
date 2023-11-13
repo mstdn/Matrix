@@ -1,8 +1,11 @@
-import { Book } from "./Book";
+import { Matrix } from "./Matrix"
 
 export default function World()
 {
     return(<>
-        <Book />
+        <Matrix 
+            rotation-y={ Math.PI * 0.95 }
+            position={ [0, - 1, 0] }
+        />
     </>)
 }

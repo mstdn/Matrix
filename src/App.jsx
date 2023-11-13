@@ -17,7 +17,7 @@ export default function App()
             camera={ 
                 {
                     fov: 45,
-                    position: [ 0, 0, 5 ],
+                    position: [ 0, 0.5, 4.5 ],
                     near: 0.1,
                     far: 600,
                 } 
