@@ -29,7 +29,7 @@ export default function App()
             <Suspense>
                 {started && ( <>
                     { audio && (
-                        <PositionalAudio autoplay loop url="./assets/mp3/1.mp3" distance={ 300 } />
+                        <PositionalAudio autoplay loop url="./assets/mp3/1.mp3" distance={ 500 } />
                     )}
                     <Experience />
                 </>

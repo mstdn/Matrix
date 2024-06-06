@@ -30,7 +30,7 @@ export const Interface = (props) =>
                         </a>
                     </li>
                     <li className='px-4 py-2 text-white'>
-                        <a href="https://gitcat.org/stux/matrix" target="_blank">
+                        <a href="https://github.com/mstdn/Matrix" target="_blank">
                             source
                         </a>
                     </li>
